@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<stdbool.h>
+    int compare(const void*a,const void*b){
+        return(*(const char*)a-*(const char*)b);
+    }
+int main(){
+    char s1[100];
+    scanf("%s",s1);
+    char s2[100];
+    scanf("%s",s2);
+    int a=strlen(s1);
+    int b=strlen(s2);
+    if(a!=b){
+        printf("Not Anagram\n");
+        return 0;
+    }
+    qsort(s1,a,sizeof(char),compare);
+    qsort(s2,b,sizeof(char),compare);
+    bool flag=true;
+    for(int i=0;i<a;i++){
+            if(s1[i]!=s2[i]){
+                flag=false;
+            }
+    }
+    if(!flag){
+        printf("Not Anagram");
+    }
+    else{
+        printf("Anagram");
+    }
+}
