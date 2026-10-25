@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    int n=33;
+      int c=0;
+      for(int i=1;i<=n;i++){
+        int num=i;
+        while(num!=0){
+          int r=num%10;
+          if(r==3){
+            c++;
+          }
+          num/=10;
+        }
+      }
+      printf("%d",c);
+}
